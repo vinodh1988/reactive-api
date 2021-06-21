@@ -4,18 +4,20 @@ import java.util.concurrent.Flow.Subscriber;
 import java.util.concurrent.Flow.Subscription;
 
 public class FirstSubscriber implements Subscriber<String>{
-private Subscription subscription;
+public Subscription subscription;
+private int count;
 	@Override
 	public void onSubscribe(Subscription subscription) {
 		// TODO Auto-generated method stub
 		this.subscription=subscription;
-		subscription.request(5);
+		subscription.request(7);
 	}
 
 	@Override
 	public void onNext(String item) {
 		// TODO Auto-generated method stub
 		System.out.println("Received "+item);
+		count++;
 	}
 
 	@Override
@@ -28,6 +30,10 @@ private Subscription subscription;
 	public void onComplete() {
 		// TODO Auto-generated method stub
 		System.out.println("Subscription completed");
+	}
+	
+	public int getCount() {
+		return count;
 	}
 
 }
