@@ -4,7 +4,7 @@ import java.util.concurrent.Flow.Subscriber;
 import java.util.concurrent.Flow.Subscription;
 
 public class FirstSubscriber implements Subscriber<String>{
-public Subscription subscription;
+public Subscription subscription;/* requests [1 to n] ..cancel */
 private int count;
 	@Override
 	public void onSubscribe(Subscription subscription) {
@@ -23,6 +23,7 @@ private int count;
 	@Override
 	public void onError(Throwable throwable) {
 		// TODO Auto-generated method stub
+		throwable.printStackTrace();
 		System.out.println("Something wrong");
 	}
 

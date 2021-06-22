@@ -6,9 +6,11 @@ import java.util.concurrent.SubmissionPublisher;
 public class FirstPublisher {
 	public static void main(String n[]) throws InterruptedException{
 		SubmissionPublisher<String> publisher=new SubmissionPublisher<String>();
+		
 		FirstSubscriber sc=new FirstSubscriber();
+		FirstSubscriber sc2=new FirstSubscriber();
 		publisher.subscribe(sc);  //connection publisher with subscriber
-       
+        publisher.subscribe(sc2);
 		publisher.submit("My First Message");
 		int i=0;
 		while(i<4){
