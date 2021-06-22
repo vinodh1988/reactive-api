@@ -10,14 +10,14 @@ private int count;
 	public void onSubscribe(Subscription subscription) {
 		// TODO Auto-generated method stub
 		this.subscription=subscription;
-		subscription.request(7);
+		subscription.request(5);
 	}
 
 	@Override
 	public void onNext(String item) {
 		// TODO Auto-generated method stub
 		System.out.println("Received "+item);
-		count++;
+		
 	}
 
 	@Override
